@@ -15,21 +15,26 @@
   @vite(['resources/scss/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans text-gray-900 antialiased">
+<body class="font-sans text-gray-900 antialiased bg-gray-100">
   <div class="flex flex-col h-screen">
-    <header class="px-3 border-b border-gray-300">
-      <div class="flex justify-between py-3">
-        <div class="font-bold">{{ config('app.name') }}</div>
-        <div class="">2</div>
+    <header class="px-4 border-b border-gray-200 bg-white">
+      <div class="container mx-auto flex justify-between py-5">
+        <div class="font-bold">
+          <a href="{{ route('mainpage') }}">{{ config('app.name') }}</a>
+          </div>
+        <nav class="">2</nav>
         <div class="">3</div>
       </div>
     </header>
-    <main class="flex-auto px-3 py-5">
-      {{ $slot }}
+    <main class="flex-auto px-4 py-5">
+      <div class="container mx-auto">
+        {{ $slot }}
+      </div>
     </main>
-    <footer class="px-3 border-t border-gray-300 text-center">
-      <div class="py-3">
-        {{ config('app.name') }} - @php echo(date("Y")) @endphp
+    <footer class="px-4 border-t border-gray-200 text-center">
+      <div class="container mx-auto py-5">
+        <span>{{ config('app.name') }}</span>
+        <span>@php echo(date('Y')) @endphp</span>
       </div>
     </footer>
   </div>
